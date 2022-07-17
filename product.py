@@ -47,34 +47,34 @@ class Product:
         tab1_list_scroll.config(command=tab1_tree.yview)
 
         # Define Our Columns
-        tab1_tree['columns'] = ("ID", "Name", "Address", "City",
-                                'State', 'Pin', "Mobile", "Email")
+        tab1_tree['columns'] = ("ID", "Name", "Description",
+                                "Type", "Catagory", "Model", "Manufacturer", "Date")
 
         # Format our columns
         tab1_tree.column("#0", width=0, stretch=0)
         tab1_tree.column("ID",  stretch=0, anchor=CENTER, width='50')
         tab1_tree.column("Name",  stretch=1, anchor='w', width='140')
-        tab1_tree.column("Address", stretch=1, anchor=CENTER, width='140')
-        tab1_tree.column("City",  stretch=1, anchor=CENTER, width='100')
-        tab1_tree.column("State",  stretch=1, anchor=CENTER, width='100')
-        tab1_tree.column("Pin",  stretch=1, anchor=CENTER, width='100')
-        tab1_tree.column("Mobile", stretch=1, anchor=CENTER, width='100')
-        tab1_tree.column("Email", stretch=1, anchor=CENTER, width='100')
+        tab1_tree.column("Description", stretch=1, anchor=CENTER, width='140')
+        tab1_tree.column("Type",  stretch=1, anchor=CENTER, width='100')
+        tab1_tree.column("Catagory",  stretch=1, anchor=CENTER, width='100')
+        tab1_tree.column("Model",  stretch=1, anchor=CENTER, width='100')
+        tab1_tree.column("Manufacturer", stretch=1, anchor=CENTER, width='100')
+        tab1_tree.column("Date", stretch=1, anchor=CENTER, width='100')
 
         # Create our Heading
         tab1_tree.heading("#0", text="", anchor=CENTER)
         tab1_tree.heading("ID", text="ID", anchor=CENTER)
         tab1_tree.heading("Name", text="Name", anchor=CENTER)
-        tab1_tree.heading("Address", text="Address", anchor=CENTER)
-        tab1_tree.heading("City", text="City", anchor=CENTER)
-        tab1_tree.heading("State", text="State", anchor=CENTER)
-        tab1_tree.heading("Pin", text="PIN", anchor=CENTER)
-        tab1_tree.heading("Mobile", text="Mobile", anchor=CENTER)
-        tab1_tree.heading("Email", text="Email", anchor=CENTER)
+        tab1_tree.heading("Description", text="Description", anchor=CENTER)
+        tab1_tree.heading("Type", text="Type", anchor=CENTER)
+        tab1_tree.heading("Catagory", text="Catagory", anchor=CENTER)
+        tab1_tree.heading("Model", text="Model", anchor=CENTER)
+        tab1_tree.heading("Manufacturer", text="Manufacturer", anchor=CENTER)
+        tab1_tree.heading("Date", text="Date", anchor=CENTER)
 
         # Add fake data
-        data = [['10', 'Sriram', '2/11 vivekananda', 'durgapur',
-                'WB', '713204', '9987577095', 'biplab@gmail.com']]
+        data = [['10', 'Hati Traders', 'Balck Socket', 'Socket',
+                '2-PIN', 'Top', 'Havels', '10-10-21']]
 
         # Create Striped Rows
         tab1_tree.tag_configure('oddrow', background='white')
@@ -100,35 +100,39 @@ class Product:
         # tab1_label.grid_rowconfigure(0, weight=1)
         # tab1_label.grid_columnconfigure(0, weight=1)
 
+        lb_id = tk.Label(lb, text="ID", width=20)
+        e_id = tk.Entry(lb, width=50)
         lb_name = tk.Label(lb, text="Name", width=20)
         e_name = tk.Entry(lb, width=50)
-        lb_add = tk.Label(lb, text="Address", width=20)
-        e_add = tk.Entry(lb, width=50)
-        lb_city = tk.Label(lb, text="City", width=20)
-        e_city = tk.Entry(lb, width=50)
-        lb_state = tk.Label(lb, text="State", width=20)
-        e_state = tk.Entry(lb, width=50)
-        lb_pin = tk.Label(lb, text="PIN", width=20)
-        e_pin = tk.Entry(lb, width=50)
-        lb_mob = tk.Label(lb, text="Mobile", width=20)
-        e_mob = tk.Entry(lb, width=50)
-        lb_email = tk.Label(lb, text="Email", width=20)
-        e_email = tk.Entry(lb, width=50)
+        lb_desc = tk.Label(lb, text="Description", width=20)
+        e_desc = tk.Entry(lb, width=50)
+        lb_type = tk.Label(lb, text="Type", width=20)
+        e_type = tk.Entry(lb, width=50)
+        lb_cat = tk.Label(lb, text="Catagory", width=20)
+        e_cat = tk.Entry(lb, width=50)
+        lb_model = tk.Label(lb, text="Model", width=20)
+        e_model = tk.Entry(lb, width=50)
+        lb_manuf = tk.Label(lb, text="Manufacturer", width=20)
+        e_manuf = tk.Entry(lb, width=50)
+        lb_date = tk.Label(lb, text="Date", width=20)
+        e_date = tk.Entry(lb, width=50)
 
-        lb_name.grid(row=0, column=0, padx=10, pady=10, sticky='ew')
-        e_name.grid(row=0, column=1, padx=10, pady=10, sticky='ew')
-        lb_add.grid(row=1, column=0, padx=10, pady=10, sticky='ew')
-        e_add.grid(row=1, column=1, padx=10, pady=10, sticky='ew')
-        lb_city.grid(row=0, column=2, padx=10, pady=10, sticky='ew')
-        e_city.grid(row=0, column=3, padx=10, pady=10, sticky='ew')
-        lb_state.grid(row=1, column=2, padx=10, pady=10, sticky='ew')
-        e_state.grid(row=1, column=3, padx=10, pady=10, sticky='ew')
-        lb_pin.grid(row=2, column=2, padx=10, pady=10, sticky='ew')
-        e_pin.grid(row=2, column=3, padx=10, pady=10, sticky='ew')
-        lb_mob.grid(row=2, column=0, padx=10, pady=10, sticky='ew')
-        e_mob.grid(row=2, column=1, padx=10, pady=10, sticky='ew')
-        lb_email.grid(row=3, column=0, padx=10, pady=10, sticky='ew')
-        e_email.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
+        lb_id.grid(row=0, column=0, padx=10, pady=10, sticky='ew')
+        e_id.grid(row=0, column=1, padx=10, pady=10, sticky='ew')
+        lb_name.grid(row=1, column=0, padx=10, pady=10, sticky='ew')
+        e_name.grid(row=1, column=1, padx=10, pady=10, sticky='ew')
+        lb_desc.grid(row=2, column=0, padx=10, pady=10, sticky='ew')
+        e_desc.grid(row=2, column=1, padx=10, pady=10, sticky='ew')
+        lb_type.grid(row=3, column=0, padx=10, pady=10, sticky='ew')
+        e_type.grid(row=3, column=1, padx=10, pady=10, sticky='ew')
+        lb_cat.grid(row=0, column=2, padx=10, pady=10, sticky='ew')
+        e_cat.grid(row=0, column=3, padx=10, pady=10, sticky='ew')
+        lb_model.grid(row=1, column=2, padx=10, pady=10, sticky='ew')
+        e_model.grid(row=1, column=3, padx=10, pady=10, sticky='ew')
+        lb_manuf.grid(row=2, column=2, padx=10, pady=10, sticky='ew')
+        e_manuf.grid(row=2, column=3, padx=10, pady=10, sticky='ew')
+        lb_date.grid(row=3, column=2, padx=10, pady=10, sticky='ew')
+        e_date.grid(row=3, column=3, padx=10, pady=10, sticky='ew')
 
     def productaction(self):
         # adding button to tab1

@@ -74,7 +74,9 @@ class Vendor:
 
         # Add fake data
         data = [['10', 'Sriram', '2/11 vivekananda', 'durgapur',
-                'WB', '713204', '9987577095', 'biplab@gmail.com']]
+                'WB', '713204', '9987577095', 'biplab@gmail.com'],
+                ['10', 'Hati Traders', 'Benachity', 'Kolkata',
+                'WB', '700001', '9999999999', 'hati_traders@gmail.com']]
 
         # Create Striped Rows
         tab1_tree.tag_configure('oddrow', background='white')
