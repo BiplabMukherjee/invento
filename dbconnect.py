@@ -1,17 +1,21 @@
 import mysql.connector
 
 
-class dbconnect:
+class Dbconnect:
 
     def connect(self):
-        conn = mysql.connector.connect(
+        self.conn = mysql.connector.connect(
             host="localhost",
             port="3306",
             user="root",
             passwd="",
             database="invento"
         )
-        if(conn):
+        if(self.conn):
             print("Connectin Established")
+            return self.conn
 
-# dbcursor = conn.cursor()
+    def closeconn(self):
+        self.conn.close()
+        print("Connection Closed")
+        # dbcursor = conn.cursor()
